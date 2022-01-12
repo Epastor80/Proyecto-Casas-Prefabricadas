@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JG Casas Prefabricadas</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/misFunciones.js"></script>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+
+<body>
+
+    <!-- Inicio Nav -->
+    <div class="miNav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="principal.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proveedores.html">Proveedores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clientes.html">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarios.html">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orden_compra.html">Ordenes Compra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inventario.html">Control Inventario</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="cerrarSesion()">Cerrar
+                        Sesion</button>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <!-- Fin Nav -->
+    <hr style="border-color: blue;">
+    <!-- Inicio Formulario -->
+    <form class="miFormulario">
+        <div class="container">
+
+            <!-- Inicio Tabla -->
+
+            <h3>Ordenes de Compra</h3>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalOrdenCompra">Crear
+                Orden</button>
+            <br><br>
+
+
+            <table class="table table-info">
+                <thead>
+                    <tr>
+                        <th scope="col">Codigo Orden</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Proveedor</th>
+                        <th scope="col">Accion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1001</th>
+                        <td>5/03/2021</td>
+                        <td>Cemento</td>
+                        <td>42</td>
+                        <td>Distribuidora Central</td>
+                        <td><button type="button" class="btn btn-warning" data-dismiss="modal">Editar</button> <button
+                                type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1002</th>
+                        <td>12-06-2021</td>
+                        <td>Varilla</td>
+                        <td>16</td>
+                        <td>Ferroyepes Ltda</td>
+                        <td><button type="button" class="btn btn-warning" data-dismiss="modal">Editar</button> <button
+                                type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1003</th>
+                        <td>28-10-2021</td>
+                        <td>Pintura</td>
+                        <td>9</td>
+                        <td>Distrisuper Ltda</td>
+                        <td><button type="button" class="btn btn-warning" data-dismiss="modal">Editar</button> <button
+                                type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Fin Tabla -->
+        </div>
+    </form>
+    <!-- Fin Formulario -->
+
+    <!-- Inicio Agregar Orden Compra -->
+    <div class="modal fade" id="myModalOrdenCompra">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Agregar Orden de Compra</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="miFormRegistro">
+                        <label for="usr">Codigo:</label>
+                        <input type="text" class="form-control" id="codigo" name="codigo">
+                        <label for="usr">Fecha:</label>
+                        <input type="text" class="form-control" id="fecha" name="fecha">
+                        <label for="usr">Producto:</label>
+                        <input type="text" class="form-control" id="producto" name="producto">
+                        <label for="usr">Cantidad:</label>
+                        <input type="text" class="form-control" id="cantidad" name="cantidad">
+                        <label for="usr">Proveedor:</label>
+                        <input type="text" class="form-control" id="proveedor" name="proveedor">
+
+
+                        <!-- MI ALERT -->
+                        <p style="color: red;" class="alertaRegistro"></p>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+                <div class="confirmacionRegistro">
+                    <div class="alert alert-success">
+                        <strong>Registro Guardado!</strong> Transaccion Existosa.
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fin Agregar orden Compra -->
+
+</body>
+
+</html>

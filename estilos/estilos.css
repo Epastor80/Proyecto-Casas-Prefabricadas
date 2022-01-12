@@ -1,0 +1,11 @@
+.miFooter{
+border-top: 150px;
+}
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+  }
+
+  nav.navbar {
+    background-color: #CC1414;
+}

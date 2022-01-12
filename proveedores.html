@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JG Casas Prefabricadas</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/misFunciones.js"></script>
+    <link rel="stylesheet" href="estilos/estilos.css">
+</head>
+
+<body>
+
+    <!-- Inicio Nav -->
+    <div class="miNav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="principal.html">Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="proveedores.html">Proveedores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clientes.html">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="usuarios.html">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="orden_compra.html">Ordenes Compra</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inventario.html">Control Inventario</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="cerrarSesion()">Cerrar
+                        Sesion</button>
+                </span>
+            </div>
+        </nav>
+    </div>
+    <!-- Fin Nav -->
+    <hr style="border-color: blue;">
+    <!-- Inicio Formulario -->
+    <form class="miFormulario">
+        <div class="container">
+
+            <!-- Inicio Tabla -->
+            <h3>Listado Proveedores</h3>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalProveedor">Agregar
+                Provedor</button>
+            <br><br>
+            <table class="table table-info">
+                <thead>
+                    <tr>
+                        <th scope="col">Identificacion</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Accion</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1070385468</th>
+                        <td>Juan Manuel Pastor</td>
+                        <td>Cra 11 No. 12 -46</td>
+                        <td>8436362</td>
+                        <td>JuanM@gmail.com</td>
+                        <td><button type="button" class="btn btn-warning" data-dismiss="modal">Editar</button> <button
+                                type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button></td>
+
+                    </tr>
+                    <tr>
+                        <th scope="row">35535299</th>
+                        <td>Andrea Pedroza</td>
+                        <td>Transv 5 No. 1-51</td>
+                        <td>3203134494</td>
+                        <td>andreakata51@gmail.com</td>
+                        <td><button type="button" class="btn btn-warning" data-dismiss="modal">Editar</button> <button
+                                type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1070387289</th>
+                        <td>Danna Marcela Pastor</td>
+                        <td>Cra 11 No. 12 -46</td>
+                        <td>DannaP@gmail.com</td>
+                        <td>3123326275</td>
+                        <td><button type="button" class="btn btn-warning" data-dismiss="modal">Editar</button> <button
+                                type="button" class="btn btn-danger" data-dismiss="modal">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- Fin Tabla -->
+        </div>
+    </form>
+    <!-- Fin Formulario -->
+
+    <!-- Inicio Agregar Proveedor -->
+    <div class="modal fade" id="myModalProveedor">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Agregar Proveedor</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="miFormRegistro">
+                        <label for="usr">Identificacion:</label>
+                        <input type="text" class="form-control" id="identificacion" name="identificacion">
+                        <label for="usr">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre">
+                        <label for="usr">Direccion:</label>
+                        <input type="text" class="form-control" id="direccion" name="direccion">
+                        <label for="usr">Telefono:</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono">
+                        <label for="usr">Correo:</label>
+                        <input type="text" class="form-control" id="correo" name="correo">
+
+
+                        <!-- MI ALERT -->
+                        <p style="color: red;" class="alertaRegistro"></p>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+                <div class="confirmacionRegistro">
+                    <div class="alert alert-success">
+                        <strong>Registro Guardado!</strong> Transaccion Existosa.
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fin Agregar Proveedor -->
+
+</body>
+
+</html>
